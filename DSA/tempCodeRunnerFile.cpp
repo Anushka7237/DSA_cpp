@@ -1,0 +1,1 @@
+return q1.front();

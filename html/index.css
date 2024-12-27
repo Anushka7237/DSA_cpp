@@ -1,0 +1,9 @@
+div {
+    background-image: url(pexels-andrew-3178786.jpg);
+    height: 100%;
+    width: 100%;
+    opacity: 30px;
+}
+h1,p {
+    color: red;
+}
