@@ -1,34 +1,36 @@
 #include <iostream>
-#include<vector>
-#include<string>
+#include <vector>
+#include <string>
 using namespace std;
-int main() {
-    string s="Help others";
-    vector<int>vec;
-            int i=0;
-            string str;
-            while(i<=s.length())
-            {
-                if(s[i]==' ')
-                vec.push_back(i);
-                i++;
-            }
-            for(int j=s.length();j>=0;j--)
-            {
-                if(s[i]!=' ')
-                str+=s[j];
-            }
-            int j=0;
-           while(j!=vec.size()){
-               int n=vec.front();
-                vec.erase(vec.begin());
-                i=n;
-                while(i!=str.length()){
-                str[i+1]=str[i];
-                i++;
-                }
-                j++;
-            }
-            cout<<str;
+int main()
+{
+    string s = "Help others";
+    vector<int> vec;
+    int i = 0;
+    string str;
+    while (i <= s.length())
+    {
+        if (s[i] == ' ')
+            vec.push_back(i);
+        i++;
+    }
+    int left = 0, right = s.length() - 1;
+    while (left < right)
+    {
+        if (s[left] == ' ')
+        {
+            left++;
+        }
+        else if (s[right] == ' ')
+        {
+            right--;
+        }
+        else{
+            swap(s[left], s[right]);
+            left++;
+            right--;
+        }
+    }
+    cout << s;
     return 0;
 }
